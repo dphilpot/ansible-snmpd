@@ -37,6 +37,19 @@ on **Ubuntu** this package is in **multiverse**. See the *"Recommended"* section
 * `snmpd_default_monitors` [default: `true`]:
 * `snmpd_link_up_down_notifications` [default: `true`]:
 
+* `snmpd_extend` and `snmpd_extend_specific`: [default: `[]`] Default snmpd extend functionality, seperated in some "overall" which can be set to every host and a  host or group specified extend to gain more flexibility.
+
+Example:
+```yaml
+---
+snmpd_extend:
+  - name: test1
+    script: /tmp/scripts/test1.sh
+snmpd_extend_specific:
+  - name: test2
+    script: /opt/scripts/test2.sh
+```
+
 ## Dependencies
 
 None
